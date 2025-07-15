@@ -1,0 +1,36 @@
+#pragma once
+#include "RenderableInstance.h"
+
+class #OBJECTNAME#
+{
+
+public:
+
+	#OBJECTNAME#()
+	{
+		
+	}
+	~#OBJERCTNAME#();
+
+
+	void Update(
+	{
+
+
+	};
+
+
+
+
+private:
+
+
+
+
+
+
+
+};
+
+
+
