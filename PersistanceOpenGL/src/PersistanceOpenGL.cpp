@@ -63,7 +63,7 @@ const unsigned int screenheight = 1080;
 int main(void)
 {
 	GLFWwindow* window;
-
+	Renderer renderer;
 	/* Initialize the library */
 	if (!glfwInit())
 		return -1;
@@ -106,69 +106,9 @@ int main(void)
 	//glCullFace(GL_BACK);
 	glEnable(GL_DEPTH_TEST);
 
-	Renderer render;
-	FullScreenQuad quad;
-
-#pragma region Shader declarations
-	const char* VertexSource = "res/Shaders/Basicvs.shader";
-	const char* FragmentSource = "res/Shaders/Basicfs.shader";
-
-
-	Shader shader(VertexSource, FragmentSource);
-	
-
-	const char* solidsourcevs = "res/Shaders/Basicvs.shader";
-	const char* solidsourcefs = "res/Shaders/Solidfs.shader";
-
-
-	Shader solidsource(solidsourcevs, solidsourcefs);
-
-   
-
-#pragma endregion
-
- 
-
-  
-
-
-
 	
 
 
-
-#pragma region Basic shader initialization
-
-
-
-
-	Camera camera(screenwidth, screenheight, glm::vec3(0.f, 0.f, 5.f));
-
-	camera.Matrix(90.f, 0.1f, 100.f, solidsource);
-
-
-	shader.SetUniform3f("gLight.LightPosition", 0, 0, 0);
-	shader.SetUniform3f("gLight.LightColor", 1, 1, 1);
-
-	shader.SetUniform1f("gLights[0].AmbientIntensity", 0.4f);
-
-
-	shader.SetUniform1i("amountoflights", 2);
-	shader.SetUniform3f("gLights[0].LightPosition", 0, 10, 0);
-	shader.SetUniform3f("gLights[0].LightColor", 1, 1, 1);
-	shader.SetUniform3f("gLights[1].LightPosition", 0, 0, 15);
-	shader.SetUniform3f("gLights[1].LightColor", 1, 1, 0);
-
-
-
-
-
-
-
-
-
-
-#pragma endregion
 
 #pragma region IMGUI initialization
 	IMGUI_CHECKVERSION();
@@ -182,15 +122,7 @@ int main(void)
 
 
    
-	ModelLoader heartmodel("res/Models/Heart.obj", "res/Materials/Heart.mtl", shader);
-
-	RenderableObject heart;
-
-	heart.SetModel(heartmodel);
-	heart.SetPosition(glm::vec3(0.f,0.f,0.f));
-	heart.SetRenderer(render);
-	heart.SetShader(shader);
-
+	
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))
 	{
@@ -203,19 +135,20 @@ int main(void)
 		
 
 		glClearColor(0.f, 0.f, 0.f, 1.f);
-		render.Clear();
-
-
-		camera.Input(window);
-
-
-		camera.Matrix(45.f, 0.1f, 100.f, shader);
-	   
-		heart.Draw();
+		renderer.Clear();
 
 		
 		/*--------------------------------------*/
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//ImGUi
 
 		ImGui_ImplOpenGL3_NewFrame();
@@ -227,7 +160,6 @@ int main(void)
 		ImGui::Begin("Window");
 
 		
-		ImGui::Checkbox("Lock Mouse", &camera.lockmouse);
 		
 		
 		ImGui::End();
