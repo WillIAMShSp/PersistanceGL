@@ -109,12 +109,19 @@ MaterialLoader::MaterialLoader(const std::string& filepath)
 void MaterialLoader::SetUniforms(const unsigned int& shader, Materials& f_material)
 {
   
+
+    glUseProgram(shader);
+
+
     unsigned int AmbientIntensityLoc = glGetUniformLocation(shader, "gLight.AmbientIntensity");
     unsigned int MaterialColorLoc = glGetUniformLocation(shader, "Mat.Color");
     unsigned int DiffuseColorLoc = glGetUniformLocation(shader, "Mat.DiffuseColor");
     unsigned int DiffuseIntensityLoc = glGetUniformLocation(shader, "Mat.DiffuseIntensity");
     
+
     
+
+
     
 
     glUniform1f(AmbientIntensityLoc, 0.2f);
@@ -122,23 +129,42 @@ void MaterialLoader::SetUniforms(const unsigned int& shader, Materials& f_materi
     glUniform3f(DiffuseColorLoc, f_material.kd0, f_material.kd1, f_material.kd2);
     glUniform1f(DiffuseIntensityLoc, 1);
 
+    glUseProgram(0);
+
 
 }
 
 void MaterialLoader::SetUniforms(const unsigned int& shader, int id)
 {
+    glUseProgram(shader);
+
     unsigned int AmbientIntensityLoc = glGetUniformLocation(shader, "gLight.AmbientIntensity");
     unsigned int MaterialColorLoc = glGetUniformLocation(shader, "Mat.Color");
     unsigned int DiffuseColorLoc = glGetUniformLocation(shader, "Mat.DiffuseColor");
     unsigned int DiffuseIntensityLoc = glGetUniformLocation(shader, "Mat.DiffuseIntensity");
 
 
-
-
     glUniform1f(AmbientIntensityLoc, 0.2f);
     glUniform3f(MaterialColorLoc, m_materials[id].ka0, m_materials[id].ka1, m_materials[id].ka2);
     glUniform3f(DiffuseColorLoc, m_materials[id].kd0, m_materials[id].kd1, m_materials[id].kd2);
     glUniform1f(DiffuseIntensityLoc, 1);
+
+
+    glUseProgram(0);
+
+}
+
+void MaterialLoader::SetUniforms(Shader& shader, Materials& material)
+{
+
+    shader.SetUniform1f("gLight.AmbientIntensity", 0.2f);
+    shader.SetUniform3f("Mat.Color", material.ka0, material.ka1, material.ka2);
+    shader.SetUniform3f("Mat.DiffuseColor", material.kd0, material.kd1, material.kd2);
+    shader.SetUniform1f("Mat.DiffuseIntensity", 1.0);
+
+
+
+
 
 
 }

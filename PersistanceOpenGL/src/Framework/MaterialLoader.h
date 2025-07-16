@@ -36,7 +36,8 @@ public:
 	~MaterialLoader();
 	void SetUniforms(const unsigned int& shader, Materials& f_material);
 	void SetUniforms(const unsigned int& shader, int id);
-	
+	void SetUniforms(Shader& shader, Materials& material);
+
 	std::unordered_map<std::string, Materials> m_umats;
 
 

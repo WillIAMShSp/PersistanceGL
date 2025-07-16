@@ -56,6 +56,7 @@ void Shader::SetUniform4f(const std::string& name, float value1, float value2, f
         std::cout << name << " uniform does not exist \n";
 
     }
+    UnBind();
 
 }
 
@@ -65,6 +66,8 @@ void Shader::SetUniform3f(const std::string& name, float value1, float value2, f
     int location = glGetUniformLocation(m_Shader, name.c_str());
 
     glUniform3f(location, value1, value2, value3);
+
+    UnBind();
 
 }
 
@@ -109,7 +112,7 @@ void Shader::SetUniform1i(const std::string& name, int value)
 
     }
 
-
+    UnBind();
 
 }
 
@@ -119,6 +122,8 @@ void Shader::SetUniformMat4fv(const std::string& name, const glm::mat4& matrix)
     int location = glGetUniformLocation(m_Shader, name.c_str());
 
     glUniformMatrix4fv(location, 1, 0, &matrix[0][0]);
+
+    UnBind();
 
 }
 
