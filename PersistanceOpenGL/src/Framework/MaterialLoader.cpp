@@ -157,7 +157,7 @@ void MaterialLoader::SetUniforms(const unsigned int& shader, int id)
 void MaterialLoader::SetUniforms(Shader& shader, Materials& material)
 {
 
-    shader.SetUniform1f("gLight.AmbientIntensity", 0.2f);
+
     shader.SetUniform3f("Mat.Color", material.ka0, material.ka1, material.ka2);
     shader.SetUniform3f("Mat.DiffuseColor", material.kd0, material.kd1, material.kd2);
     shader.SetUniform1f("Mat.DiffuseIntensity", 1.0);

@@ -37,7 +37,7 @@ struct Material
 
 
 uniform Material Mat;
-uniform Light gLight;
+
 uniform Light gLights[10];
 
 

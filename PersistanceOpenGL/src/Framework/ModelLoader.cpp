@@ -465,7 +465,7 @@ void ModelLoader::Draw(Renderer& renderer)
 
             vao.AddBuffer(vb, layout);
 
-            MatLoader.SetUniforms(m_shadersource.GetShader(), material);
+            MatLoader.SetUniforms(m_shadersource, material);
 
             renderer.Draw(vao, VertexBuffers[i].GetSize(), m_shadersource);
 

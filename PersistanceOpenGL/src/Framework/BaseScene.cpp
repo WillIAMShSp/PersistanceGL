@@ -10,7 +10,7 @@ BaseScene::BaseScene()
 void BaseScene::Lights()
 {
 	m_shader.Bind();
-	m_shader.SetUniform1i("amountoflights", m_pointlights.size());
+	m_shader.SetUniform1i("amountoflights", (int)m_pointlights.size());
 	
 	for (int i = 0; i < m_pointlights.size(); i++)
 	{

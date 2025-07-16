@@ -19,7 +19,7 @@ void Renderer::Draw(VertexArray& vao, IndexBuffer& ib, Shader& shader)
 
 }
 
-void Renderer::Draw(VertexArray& vao, int count,  Shader& shader)
+void Renderer::Draw(VertexArray& vao, size_t count,  Shader& shader)
 {
 	vao.Bind();
 	shader.Bind();

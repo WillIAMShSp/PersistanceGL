@@ -15,7 +15,7 @@ public:
 	Renderer();
 
 	void Draw(VertexArray& vao, IndexBuffer& ib, Shader& shader);
-	void Draw(VertexArray& vao, int count, Shader& shader);
+	void Draw(VertexArray& vao, size_t count, Shader& shader);
 	void Clear();
 	
 private:
