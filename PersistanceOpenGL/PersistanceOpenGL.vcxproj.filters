@@ -18,7 +18,7 @@
     <ClCompile Include="src\PersistanceOpenGL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Framework\BaseScene.cpp">
+    <ClCompile Include="src\Scenes\BaseScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Framework\Camera.cpp">
@@ -37,9 +37,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Framework\ModelLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Framework\PlanetsScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Framework\RenderBufferObject.cpp">
@@ -110,7 +107,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Framework\BaseScene.h">
+    <ClInclude Include="src\Scenes\BaseScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\BasicShader.h">
@@ -135,9 +132,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\ModelLoader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Framework\PlanetsScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\RenderBufferObject.h">

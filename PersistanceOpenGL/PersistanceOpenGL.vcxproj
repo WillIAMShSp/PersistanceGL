@@ -143,7 +143,7 @@
     <ClCompile Include="res\Assets\Heart\Heart.cpp" />
     <ClCompile Include="res\Assets\Rose\Rose.cpp" />
     <ClCompile Include="res\Assets\Star\Star.cpp" />
-    <ClCompile Include="src\Framework\BaseScene.cpp" />
+    <ClCompile Include="src\Scenes\BaseScene.cpp" />
     <ClCompile Include="src\Framework\Camera.cpp" />
     <ClCompile Include="src\Framework\CubeMap.cpp" />
     <ClCompile Include="src\Framework\FrameBufferObject.cpp" />
@@ -152,7 +152,6 @@
     <ClCompile Include="src\Framework\MaterialLoader.cpp" />
     <ClCompile Include="src\Framework\ModelLoader.cpp" />
     <ClCompile Include="src\PersistanceOpenGL.cpp" />
-    <ClCompile Include="src\Framework\PlanetsScene.cpp" />
     <ClCompile Include="src\Framework\RenderableObject.cpp" />
     <ClCompile Include="src\Framework\RenderBufferObject.cpp" />
     <ClCompile Include="src\Framework\Renderer.cpp" />
@@ -176,7 +175,7 @@
     <ClInclude Include="res\Assets\Heart\Heart.h" />
     <ClInclude Include="res\Assets\Rose\Rose.h" />
     <ClInclude Include="res\Assets\Star\Star.h" />
-    <ClInclude Include="src\Framework\BaseScene.h" />
+    <ClInclude Include="src\Scenes\BaseScene.h" />
     <ClInclude Include="src\Framework\BasicShader.h" />
     <ClInclude Include="src\Framework\Camera.h" />
     <ClInclude Include="src\Framework\CubeMap.h" />
@@ -186,7 +185,6 @@
     <ClInclude Include="src\Framework\Lights.h" />
     <ClInclude Include="src\Framework\MaterialLoader.h" />
     <ClInclude Include="src\Framework\ModelLoader.h" />
-    <ClInclude Include="src\Framework\PlanetsScene.h" />
     <ClInclude Include="src\Framework\RenderableObject.h" />
     <ClInclude Include="src\Framework\RenderBufferObject.h" />
     <ClInclude Include="src\Framework\Renderer.h" />

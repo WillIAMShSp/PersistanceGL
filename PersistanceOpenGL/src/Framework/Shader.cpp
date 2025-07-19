@@ -29,6 +29,8 @@ Shader::Shader(const std::string& VertexShader, const std::string& FragmentShade
 
 Shader::~Shader()
 {
+    glDeleteProgram(m_Shader);
+
 }
 
 void Shader::Bind()
